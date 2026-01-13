@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <style>
+        *{
+            background-color: rgba(255, 205, 247, 0.974);
+        }
+        div{
+            text-align: center;
+            margin-top: 200px;
+        }
+        .one{
+            font-size: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: aliceblue;
+            display: inline-block;
+            padding: 3px;
+        }
+        a{
+            
+            margin: 50px;
+            padding: 5px 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            display: block inline;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: aliceblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="https://media.tenor.com/fjAAMlSJmqMAAAAM/ngi.gif" alt="" width="200" height="200"> <br> <br>
+        <p class="one">Do you Love me?</p>
+        <p>Don't answer too fast think again</p>
+         <br><br>
+        <a href="fun1.html">Yes</a>
+        <a href="#" id="moveBtn">No</a>
+    </div>
+   <script>
+  const link = document.getElementById("moveBtn");
+
+  function moveRandomly() {
+    const maxX = window.innerWidth - link.offsetWidth;
+    const maxY = window.innerHeight - link.offsetHeight;
+
+    link.style.left = Math.random() * maxX + "px";
+    link.style.top  = Math.random() * maxY + "px";
+  }
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // 🔑 stop page reload
+
+    // ensure it can move
+    link.style.position = "absolute";
+
+    moveRandomly();
+  });
+</script>
+
+</body>
+
+</html>
